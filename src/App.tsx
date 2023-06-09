@@ -16,6 +16,7 @@ function App() {
     ])
 
     const [filter, setFilter] = useState<FilterValuesType>('all')
+
     let filteredTasks = tasks
     if (filter === 'active') {
         filteredTasks = tasks.filter(task => !task.isDone)
@@ -49,6 +50,7 @@ function App() {
                       changeFilterTasks={changeFilterTasks}
                       addTask={addTask}
                       changeTaskStatus={changeTaskStatus}
+                      filter={filter}
             />
         </div>
     );
